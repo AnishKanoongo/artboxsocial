@@ -82,8 +82,8 @@ const Contact = () => {
                 Get in Touch
               </h4>
               <div className="space-y-3 text-muted-foreground">
-                <p>📧 hello@artboxsocial.com</p>
-                <p>📱 +91 XXXXX XXXXX</p>
+                <p>📧 Artbox.snigdha@gmail.com</p>
+                <p>📱 +91 9166150301</p>
                 <p>📍 Jaipur, Rajasthan, India</p>
               </div>
             </div>

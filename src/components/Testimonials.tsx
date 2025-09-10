@@ -27,6 +27,30 @@ const Testimonials = () => {
       company: "Casa Ninos",
       testimonial: "Working with Artbox Social has been amazing. They understand our brand vision and consistently deliver high-quality content that resonates with our audience.",
       rating: 5
+    },
+    {
+      name: "Rohan Dilegno",
+      company: "Dilegno India",
+      testimonial: "Artbox transformed our furniture brand's online presence with stunning visuals and strategic positioning. Our market presence has never been stronger.",
+      rating: 5
+    },
+    {
+      name: "Priya Mehta",
+      company: "Yellow Bricks Jaipur",
+      testimonial: "The parent community engagement has improved tremendously since we started working with Artbox. Their understanding of education sector is remarkable.",
+      rating: 5
+    },
+    {
+      name: "Vikash Suadre",
+      company: "Suadre Studios",
+      testimonial: "As a creative agency ourselves, we appreciate Artbox's innovative approach to digital marketing. They've helped us reach new creative heights.",
+      rating: 5
+    },
+    {
+      name: "Neha Agarwal",
+      company: "Local Business Owner",
+      testimonial: "The ROI we've seen from our investment with Artbox Social is incredible. They truly understand the Jaipur market and deliver results consistently.",
+      rating: 5
     }
   ];
 

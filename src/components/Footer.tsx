@@ -33,7 +33,7 @@ const Footer = () => {
           
           <div className="text-center md:text-right">
             <p className="text-background/60 mb-2">Based in Jaipur</p>
-            <p className="text-background/80">hello@artboxsocial.com</p>
+            <p className="text-background/80">Artbox.snigdha@gmail.com</p>
           </div>
         </div>
         

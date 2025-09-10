@@ -19,12 +19,16 @@ const Hero = () => {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-6">
-              <Button className="hero-button">
-                🚀 Work With Us
-              </Button>
-              <Button variant="outline" className="px-8 py-4 rounded-full font-semibold text-lg border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                View Our Work
-              </Button>
+              <a href="/pricing">
+                <Button className="hero-button">
+                  🚀 Work With Us
+                </Button>
+              </a>
+              <a href="/client-work">
+                <Button variant="outline" className="px-8 py-4 rounded-full font-semibold text-lg border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                  View Our Work
+                </Button>
+              </a>
             </div>
           </div>
           <div className="relative">
