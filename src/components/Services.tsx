@@ -61,7 +61,7 @@ const Services = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="service-card">
+            <div key={index} className="service-card group">
               <div className="mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="w-8 h-8 text-primary-foreground" />
