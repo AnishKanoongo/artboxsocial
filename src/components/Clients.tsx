@@ -27,6 +27,42 @@ const Clients = () => {
     {
       name: "Suadre Studios",
       url: "https://www.instagram.com/suadrestudio/?hl=en"
+    },
+    {
+      name: "Shreeya's India",
+      url: "https://shreeyasindia.com/"
+    },
+    {
+      name: "Kalaai Studio",
+      url: "https://www.instagram.com/kala__studio/"
+    },
+    {
+      name: "Gayatri Arts Creations",
+      url: "https://www.instagram.com/gayatri_arts_creations/"
+    },
+    {
+      name: "Roshan Kia",
+      url: "https://www.instagram.com/roshan_kia_jaipur/"
+    },
+    {
+      name: "Roshan Nissan",
+      url: "https://roshannissan.com/"
+    },
+    {
+      name: "Hydes and Hues",
+      url: "https://hydesnhues.com/"
+    },
+    {
+      name: "JB's Home Theatre",
+      url: "https://www.facebook.com/JBsJaipur/"
+    },
+    {
+      name: "Aayojan School",
+      url: "https://www.instagram.com/aayojan_school/"
+    },
+    {
+      name: "Aroma Amenities",
+      url: "https://www.instagram.com/aroma_amenities_jaipur/"
     }
   ];
 

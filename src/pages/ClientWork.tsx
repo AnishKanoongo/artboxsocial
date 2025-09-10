@@ -94,6 +94,123 @@ const ClientWork = () => {
       description: "Showcasing creative excellence through strategic content and industry networking.",
       image: "🎨",
       instagramUrl: "https://www.instagram.com/suadrestudio/?hl=en"
+    },
+    {
+      client: "Shreeya's India",
+      industry: "Eco-Friendly Products",
+      services: ["Sustainable Marketing", "Content Strategy", "Brand Positioning"],
+      results: [
+        "Eco-conscious audience growth",
+        "Brand sustainability positioning",
+        "Increased product awareness"
+      ],
+      description: "Building a sustainable brand narrative for eco-friendly canvas bags and DIY products.",
+      image: "🛍️",
+      instagramUrl: "https://shreeyasindia.com/"
+    },
+    {
+      client: "Kalaai Studio",
+      industry: "Creative Design",
+      services: ["Portfolio Showcase", "Creative Content", "Brand Building"],
+      results: [
+        "Enhanced creative portfolio",
+        "Industry recognition",
+        "New client acquisitions"
+      ],
+      description: "Showcasing creative excellence and building a strong design studio brand presence.",
+      image: "🎭",
+      instagramUrl: "https://www.instagram.com/kala__studio/"
+    },
+    {
+      client: "Gayatri Arts Creations",
+      industry: "Arts & Crafts",
+      services: ["Community Building", "Creative Content", "Artist Networking"],
+      results: [
+        "Artist community growth",
+        "Creative engagement boost",
+        "Workshop enrollment increase"
+      ],
+      description: "Building a vibrant arts community through creative content and artist networking.",
+      image: "🎨",
+      instagramUrl: "https://www.instagram.com/gayatri_arts_creations/"
+    },
+    {
+      client: "Roshan Kia",
+      industry: "Automobile",
+      services: ["Digital Marketing", "Lead Generation", "Social Media Management"],
+      results: [
+        "Increased showroom visits",
+        "30% boost in car sales",
+        "Enhanced brand awareness"
+      ],
+      description: "Complete digital marketing strategy for automobile dealership focusing on lead generation.",
+      image: "🚗",
+      instagramUrl: "https://www.instagram.com/roshan_kia_jaipur/"
+    },
+    {
+      client: "Roshan Nissan",
+      industry: "Automobile",
+      services: ["Brand Marketing", "Customer Engagement", "Digital Presence"],
+      results: [
+        "Improved brand awareness",
+        "Customer acquisition growth",
+        "Enhanced digital presence"
+      ],
+      description: "Comprehensive digital strategy for authorized Nissan dealer focusing on customer engagement.",
+      image: "🚙",
+      instagramUrl: "https://roshannissan.com/"
+    },
+    {
+      client: "Hydes and Hues",
+      industry: "Fashion & Footwear",
+      services: ["E-commerce Strategy", "Fashion Content", "Brand Positioning"],
+      results: [
+        "Online sales growth",
+        "Fashion brand positioning",
+        "Customer engagement boost"
+      ],
+      description: "Premium footwear brand development through strategic e-commerce and fashion content.",
+      image: "👞",
+      instagramUrl: "https://hydesnhues.com/"
+    },
+    {
+      client: "JB's Home Theatre",
+      industry: "Technology & Entertainment",
+      services: ["Technical Content", "Social Media", "Service Marketing"],
+      results: [
+        "Tech-savvy audience growth",
+        "Service booking increase",
+        "Brand credibility boost"
+      ],
+      description: "Building brand credibility for home entertainment solutions through technical content strategy.",
+      image: "🎬",
+      instagramUrl: "https://www.facebook.com/JBsJaipur/"
+    },
+    {
+      client: "Aayojan School",
+      industry: "Education",
+      services: ["Educational Content", "Parent Engagement", "Social Media Management"],
+      results: [
+        "Parent satisfaction increase",
+        "Enrollment growth",
+        "Community engagement boost"
+      ],
+      description: "Comprehensive educational content strategy focusing on parent engagement and school community building.",
+      image: "📚",
+      instagramUrl: "https://www.instagram.com/aayojan_school/"
+    },
+    {
+      client: "Aroma Amenities",
+      industry: "Hospitality & B2B",
+      services: ["B2B Marketing", "Content Strategy", "Brand Building"],
+      results: [
+        "Business partnership growth",
+        "Brand credibility increase",
+        "Market presence expansion"
+      ],
+      description: "Strategic B2B marketing for hospitality amenities focusing on business partnerships and credibility.",
+      image: "🏨",
+      instagramUrl: "https://www.instagram.com/aroma_amenities_jaipur/"
     }
   ];
 
