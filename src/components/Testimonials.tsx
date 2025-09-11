@@ -1,101 +1,136 @@
-import { Star, Quote } from "lucide-react";
+import { useState } from "react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Testimonials = () => {
   const testimonials = [
     {
       name: "Rajesh Sharma",
-      company: "Anytime Fitness Shyam Nagar",
-      content: "Artbox Social transformed our digital presence completely. Their premium content and strategic approach helped us increase member engagement by 300%. The quality of work is truly exceptional.",
-      rating: 5,
-      role: "Franchise Owner"
+      company: "Anytime Fitness Jaipur",
+      testimonial: "Artbox Social completely transformed our digital presence. Their creative approach and data-driven strategies helped us achieve 3x engagement growth in just 6 months.",
+      rating: 5
     },
     {
-      name: "Priya Jain",
+      name: "Mitali Jain",
       company: "Jewellery by Mitali Jain",
-      content: "Working with Artbox Social has been a game-changer for our luxury jewelry brand. Their sophisticated content creation and premium aesthetic perfectly captures our brand essence.",
-      rating: 5,
-      role: "Creative Director"
+      testimonial: "The team at Artbox understands luxury branding perfectly. Their influencer marketing strategy has been phenomenal for our jewelry business growth.",
+      rating: 5
     },
     {
-      name: "Vikram Singh",
-      company: "Roshan Nissan",
-      content: "The team at Artbox Social understands luxury branding like no other agency in Jaipur. Our social media presence has never looked more professional and engaging.",
-      rating: 5,
-      role: "Marketing Head"
-    },
-    {
-      name: "Dr. Meena Gupta",
+      name: "Dr. Priya Gupta",
       company: "Uday Waldorf School",
-      content: "Artbox Social helped us reach more parents and showcase our unique educational approach. Their content strategy perfectly communicates our values and philosophy.",
-      rating: 5,
-      role: "Principal"
+      testimonial: "Professional, creative, and results-driven. Artbox helped us boost admissions significantly through their comprehensive digital marketing approach.",
+      rating: 5
+    },
+    {
+      name: "Amit Verma",
+      company: "Casa Ninos",
+      testimonial: "Working with Artbox Social has been amazing. They understand our brand vision and consistently deliver high-quality content that resonates with our audience.",
+      rating: 5
+    },
+    {
+      name: "Rohan Dilegno",
+      company: "Dilegno India",
+      testimonial: "Artbox transformed our furniture brand's online presence with stunning visuals and strategic positioning. Our market presence has never been stronger.",
+      rating: 5
+    },
+    {
+      name: "Priya Mehta",
+      company: "Yellow Bricks Jaipur",
+      testimonial: "The parent community engagement has improved tremendously since we started working with Artbox. Their understanding of education sector is remarkable.",
+      rating: 5
+    },
+    {
+      name: "Vikash Suadre",
+      company: "Suadre Studios",
+      testimonial: "As a creative agency ourselves, we appreciate Artbox's innovative approach to digital marketing. They've helped us reach new creative heights.",
+      rating: 5
+    },
+    {
+      name: "Neha Agarwal",
+      company: "Local Business Owner",
+      testimonial: "The ROI we've seen from our investment with Artbox Social is incredible. They truly understand the Jaipur market and deliver results consistently.",
+      rating: 5
     }
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
   return (
-    <section className="py-32 relative overflow-hidden">
-      <div className="section-padding relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 slide-in-section fade-in visible">
-            <h2 className="section-title text-foreground mb-8">
-              What Our <span className="text-gradient">Clients Say</span>
-            </h2>
-            <div className="w-32 h-2 bg-gradient-to-r from-accent to-primary-glow mx-auto mb-8 rounded-full"></div>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Discover how we've helped premium brands across Jaipur achieve extraordinary 
-              digital growth and build meaningful connections with their audiences.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-            {testimonials.map((testimonial, index) => (
-              <div 
-                key={index}
-                className={`group relative bg-card border border-border rounded-3xl p-8 shadow-elegant hover:shadow-luxury transition-all duration-700 hover:-translate-y-2 ${
-                  index % 3 === 1 ? 'lg:mt-12' : ''
-                }`}
-              >
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-accent to-primary-glow rounded-full flex items-center justify-center shadow-gold-glow">
-                  <Quote className="w-6 h-6 text-primary" />
-                </div>
-
-                <div className="flex items-center gap-1 mb-6 pt-4">
-                  {[...Array(testimonial.rating)].map((_, starIndex) => (
-                    <Star 
-                      key={starIndex} 
-                      className="w-5 h-5 fill-accent text-accent" 
-                    />
-                  ))}
-                </div>
-
-                <blockquote className="text-card-foreground leading-relaxed mb-8 text-lg">
-                  "{testimonial.content}"
-                </blockquote>
-
-                <div className="border-t border-border pt-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-accent to-primary-glow rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-primary font-bold text-lg">
-                        {testimonial.name.charAt(0)}
-                      </span>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-semibold text-card-foreground text-lg">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-muted-foreground text-sm">
-                        {testimonial.role}
-                      </p>
-                      <p className="text-accent text-sm font-medium">
-                        {testimonial.company}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+    <section className="py-20 section-padding bg-secondary/30">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            What Our Clients Say
+          </h2>
+          <p className="text-xl text-muted-foreground">
+            Don't just take our word for it - hear from our satisfied clients
+          </p>
+        </div>
+        
+        <div className="relative">
+          <div className="bg-card rounded-3xl p-8 lg:p-12 border border-border shadow-lg">
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                  <Star key={i} className="w-6 h-6 fill-accent text-accent" />
+                ))}
               </div>
-            ))}
+              
+              <blockquote className="text-xl lg:text-2xl text-card-foreground mb-8 leading-relaxed italic">
+                "{testimonials[currentIndex].testimonial}"
+              </blockquote>
+              
+              <div className="border-t border-border pt-6">
+                <h4 className="text-lg font-semibold text-card-foreground mb-1">
+                  {testimonials[currentIndex].name}
+                </h4>
+                <p className="text-muted-foreground">
+                  {testimonials[currentIndex].company}
+                </p>
+              </div>
+            </div>
           </div>
+          
+          {/* Navigation buttons */}
+          <Button
+            variant="outline"
+            size="icon"
+            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            onClick={prevTestimonial}
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </Button>
+          
+          <Button
+            variant="outline"
+            size="icon"
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            onClick={nextTestimonial}
+          >
+            <ChevronRight className="w-4 h-4" />
+          </Button>
+        </div>
+        
+        {/* Dots indicator */}
+        <div className="flex justify-center mt-8 gap-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex ? 'bg-primary' : 'bg-muted'
+              }`}
+              onClick={() => setCurrentIndex(index)}
+            />
+          ))}
         </div>
       </div>
     </section>
