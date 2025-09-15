@@ -1,4 +1,5 @@
 import { Heart, Target, Zap } from "lucide-react";
+import aboutTeamImage from "@/assets/about-team.jpg";
 
 const About = () => {
   const values = [
@@ -56,26 +57,28 @@ const About = () => {
           </div>
           
           <div className="relative">
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-8 border border-primary/20">
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-4 h-4 bg-primary rounded-full"></div>
-                  <span className="text-lg font-semibold">Based in Jaipur, India</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-4 h-4 bg-accent rounded-full"></div>
-                  <span className="text-lg font-semibold">Creative Team of Experts</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-4 h-4 bg-primary rounded-full"></div>
-                  <span className="text-lg font-semibold">Data-Driven Approach</span>
-                </div>
-              </div>
+            <div className="rounded-3xl overflow-hidden shadow-[var(--elegant-shadow)]">
+              <img 
+                src={aboutTeamImage}
+                alt="Artbox Social creative team"
+                className="w-full h-auto transition-transform duration-700 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20"></div>
             </div>
             
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent rounded-full"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary rounded-full"></div>
+            {/* Floating info cards */}
+            <div className="absolute -top-8 -right-8 bg-white rounded-2xl p-6 shadow-lg border border-primary/20">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary mb-1">50+</div>
+                <div className="text-sm text-muted-foreground">Happy Clients</div>
+              </div>
+            </div>
+            <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl p-6 shadow-lg border border-accent/20">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-accent mb-1">3+</div>
+                <div className="text-sm text-muted-foreground">Years Experience</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

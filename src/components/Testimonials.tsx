@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import testimonialsImage from "@/assets/testimonials-bg.jpg";
 
 const Testimonials = () => {
   const testimonials = [
@@ -65,13 +66,22 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 section-padding bg-secondary/30">
-      <div className="max-w-6xl mx-auto">
+    <section 
+      className="py-20 section-padding relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${testimonialsImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="absolute inset-0 bg-navy/90"></div>
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 font-playfair">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-white/90 font-inter">
             Don't just take our word for it - hear from our satisfied clients
           </p>
         </div>

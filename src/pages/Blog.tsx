@@ -1,5 +1,8 @@
 import { useInView } from "react-intersection-observer";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
+import blogHeader from "@/assets/blog-header.jpg";
+import analyticsImage from "@/assets/analytics-dashboard.jpg";
+import influencerImage from "@/assets/influencer-marketing.jpg";
 
 const Blog = () => {
   const { ref, inView } = useInView({
@@ -12,7 +15,7 @@ const Blog = () => {
       id: 1,
       title: "The Psychology of Social Media Marketing",
       excerpt: "Explore how cognitive biases, dopamine loops, and FOMO drive user engagement. Practical insights on applying psychology for brand growth.",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
+      image: analyticsImage,
       date: "2024-01-15",
       readTime: "8 min read",
       category: "Psychology"
@@ -21,7 +24,7 @@ const Blog = () => {
       id: 2,
       title: "How to Go Viral on Instagram: The 2025 Playbook",
       excerpt: "Step-by-step tactics on virality: algorithm signals, trending audios, shareable formats. Case studies of viral posts.",
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
+      image: influencerImage,
       date: "2024-01-12",
       readTime: "12 min read",
       category: "Instagram"
@@ -103,8 +106,16 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-32 section-padding bg-gradient-to-br from-navy via-primary to-accent relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section 
+        className="py-32 section-padding relative overflow-hidden"
+        style={{
+          backgroundImage: `url(${blogHeader})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-primary/80 to-accent/70"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className={`text-center ${inView ? 'fade-in visible' : 'fade-in'}`} ref={ref}>
             <h1 className="hero-title text-white mb-8 font-playfair">

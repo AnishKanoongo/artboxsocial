@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import premiumHero from "@/assets/premium-hero.jpg";
+import premiumHero from "@/assets/hero-social-media.jpg";
+import digitalGrowth from "@/assets/digital-growth.jpg";
 
 const Hero = () => {
   const [typedText, setTypedText] = useState("");

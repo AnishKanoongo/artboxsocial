@@ -8,7 +8,7 @@ import {
   BarChart3 
 } from "lucide-react";
 import { useInView } from "react-intersection-observer";
-import luxuryPattern from "@/assets/luxury-pattern.jpg";
+import contentCreation from "@/assets/content-creation.jpg";
 
 const Services = () => {
   const { ref, inView } = useInView({
@@ -66,7 +66,7 @@ const Services = () => {
       ref={ref}
       className="py-32 relative overflow-hidden"
       style={{
-        backgroundImage: `url(${luxuryPattern})`,
+        backgroundImage: `url(${contentCreation})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
