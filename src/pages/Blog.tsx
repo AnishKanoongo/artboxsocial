@@ -1,5 +1,8 @@
 import { useInView } from "react-intersection-observer";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import blogHeader from "@/assets/blog-header.jpg";
 import analyticsImage from "@/assets/analytics-dashboard.jpg";
 import influencerImage from "@/assets/influencer-marketing.jpg";
@@ -18,7 +21,8 @@ const Blog = () => {
       image: analyticsImage,
       date: "2024-01-15",
       readTime: "8 min read",
-      category: "Psychology"
+      category: "Psychology",
+      slug: "psychology-social-media-marketing"
     },
     {
       id: 2,
@@ -27,7 +31,8 @@ const Blog = () => {
       image: influencerImage,
       date: "2024-01-12",
       readTime: "12 min read",
-      category: "Instagram"
+      category: "Instagram",
+      slug: "go-viral-instagram-2025"
     },
     {
       id: 3,
@@ -36,7 +41,8 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop",
       date: "2024-01-10",
       readTime: "6 min read",
-      category: "Content Strategy"
+      category: "Content Strategy",
+      slug: "top-hooks-attention-reels"
     },
     {
       id: 4,
@@ -45,34 +51,38 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=400&fit=crop",
       date: "2024-01-08",
       readTime: "10 min read",
-      category: "Video"
+      category: "Video",
+      slug: "video-editing-secrets"
     },
     {
       id: 5,
       title: "Storytelling in Marketing: How to Make Your Brand Memorable",
       excerpt: "Frameworks for brand storytelling using Hero's Journey and relatable struggles. Examples from global and Indian brands.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
       date: "2024-01-05",
       readTime: "9 min read",
-      category: "Branding"
+      category: "Branding",
+      slug: "storytelling-marketing"
     },
     {
       id: 6,
       title: "The Future of Social Media in India: Trends for 2025 & Beyond",
-      excerpt: "Predictions around short-form video, influencer commerce, regional content. Data-backed forecasts for Indian market.",
+      excerpt: "Predictions around short-form video, influencer commerce, regional content. Data-backed forecasts for the Indian market.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
       date: "2024-01-03",
       readTime: "11 min read",
-      category: "Trends"
+      category: "Trends",
+      slug: "future-social-media-india"
     },
     {
       id: 7,
       title: "Neuromarketing: How the Brain Responds to Ads",
-      excerpt: "Deep dive into subconscious triggers, colors, sounds, and placements. Application for digital campaigns and conversions.",
+      excerpt: "Deep dive into subconscious triggers, colors, sounds, and placements. Application for digital campaigns and consumer psychology.",
       image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&h=400&fit=crop",
       date: "2024-01-01",
       readTime: "13 min read",
-      category: "Psychology"
+      category: "Psychology",
+      slug: "neuromarketing-brain-ads"
     },
     {
       id: 8,
@@ -81,7 +91,8 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
       date: "2023-12-28",
       readTime: "7 min read",
-      category: "Personal Branding"
+      category: "Personal Branding",
+      slug: "build-personal-brand-instagram"
     },
     {
       id: 9,
@@ -90,7 +101,8 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&h=400&fit=crop",
       date: "2023-12-25",
       readTime: "5 min read",
-      category: "Growth"
+      category: "Growth",
+      slug: "science-hashtags-reach"
     },
     {
       id: 10,
@@ -99,12 +111,15 @@ const Blog = () => {
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
       date: "2023-12-22",
       readTime: "14 min read",
-      category: "Conversion"
+      category: "Conversion",
+      slug: "likes-to-leads-conversion"
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
+      <Navbar />
+      
       {/* Hero Section */}
       <section 
         className="py-32 section-padding relative overflow-hidden"
@@ -137,61 +152,69 @@ const Blog = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             {blogPosts.map((post, index) => (
-              <article 
+              <Link 
                 key={post.id}
-                className={`group cursor-pointer ${inView ? 'fade-in visible' : 'fade-in'}`}
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                  // Featured post spans 2 columns
-                  ...(index === 0 && { gridColumn: 'span 2', gridRow: 'span 2' })
-                }}
+                to={`/blog/${post.slug}`}
+                className="group"
               >
-                <div className="bg-card rounded-3xl overflow-hidden border border-border hover:shadow-[var(--elegant-shadow)] transition-all duration-500 hover:scale-105 h-full">
-                  {/* Image */}
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={post.image}
-                      alt={post.title}
-                      className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${index === 0 ? 'h-80' : 'h-48'}`}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-                        {post.category}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className={`p-8 ${index === 0 ? 'p-10' : 'p-6'}`}>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4" />
-                        <span>{new Date(post.date).toLocaleDateString()}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4" />
-                        <span>{post.readTime}</span>
+                <article 
+                  className={`cursor-pointer ${inView ? 'fade-in visible' : 'fade-in'}`}
+                  style={{
+                    animationDelay: `${index * 100}ms`,
+                    // Featured post spans 2 columns
+                    ...(index === 0 && { gridColumn: 'span 2', gridRow: 'span 2' })
+                  }}
+                >
+                  <div className="bg-card rounded-3xl overflow-hidden border border-border hover:shadow-[var(--elegant-shadow)] transition-all duration-500 hover:scale-105 h-full">
+                    {/* Image */}
+                    <div className="relative overflow-hidden">
+                      <img 
+                        src={post.image}
+                        alt={post.title}
+                        className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${index === 0 ? 'h-80' : 'h-48'}`}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          {post.category}
+                        </span>
                       </div>
                     </div>
-
-                    <h3 className={`font-bold text-navy mb-4 group-hover:text-primary transition-colors duration-300 font-playfair ${index === 0 ? 'text-3xl mb-6' : 'text-xl'}`}>
-                      {post.title}
-                    </h3>
-
-                    <p className={`text-muted-foreground leading-relaxed font-inter ${index === 0 ? 'text-lg mb-8' : 'text-base mb-6'}`}>
-                      {post.excerpt}
-                    </p>
-
-                    <div className="flex items-center justify-between">
-                      <button className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300">
-                        Read More
-                        <ArrowRight className="w-4 h-4" />
-                      </button>
+                    
+                    {/* Content */}
+                    <div className={`p-8 ${index === 0 ? 'p-10' : ''}`}>
+                      <h3 className={`font-bold text-navy mb-4 font-playfair group-hover:text-primary transition-colors duration-300 ${index === 0 ? 'text-3xl mb-6' : 'text-xl'}`}>
+                        {post.title}
+                      </h3>
+                      <p className={`text-muted-foreground leading-relaxed font-inter mb-6 ${index === 0 ? 'text-lg' : ''}`}>
+                        {post.excerpt}
+                      </p>
+                      
+                      {/* Meta Info */}
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-1">
+                            <Calendar className="w-4 h-4" />
+                            <span>{new Date(post.date).toLocaleDateString('en-US', { 
+                              month: 'short', 
+                              day: 'numeric' 
+                            })}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Clock className="w-4 h-4" />
+                            <span>{post.readTime}</span>
+                          </div>
+                        </div>
+                        
+                        <button className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300">
+                          Read More
+                          <ArrowRight className="w-4 h-4" />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </Link>
             ))}
           </div>
 
@@ -204,8 +227,8 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="py-24 section-padding bg-gradient-to-r from-navy to-primary">
+      {/* Newsletter Signup */}
+      <section className="py-20 section-padding bg-gradient-to-r from-navy to-primary">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="section-title text-white mb-6 font-playfair">
             Stay Updated with Latest <span className="text-gold">Insights</span>
@@ -225,6 +248,8 @@ const Blog = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
