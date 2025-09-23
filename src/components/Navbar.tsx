@@ -11,6 +11,7 @@ const Navbar = () => {
     { name: "Our Work", href: "/client-work" },
     { name: "Blog", href: "/blog" },
     { name: "Pricing", href: "/pricing" },
+    { name: "Work With Us", href: "/work-with-us" },
   ];
 
   return (
@@ -18,7 +19,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto section-padding">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center space-x-2">
+          <a href="/" className="flex items-center space-x-3">
+            <img 
+              src="/src/assets/artbox-logo.png" 
+              alt="Artbox Social Logo" 
+              className="h-10 w-auto"
+            />
             <span className="text-2xl font-bold text-gradient font-playfair">
               Artbox Social
             </span>

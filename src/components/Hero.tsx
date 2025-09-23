@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import premiumHero from "@/assets/hero-social-media.jpg";
-import digitalGrowth from "@/assets/digital-growth.jpg";
+import instagramWorkers from "@/assets/instagram-workers.png";
 
 const Hero = () => {
   const [typedText, setTypedText] = useState("");
@@ -36,7 +35,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed opacity-10"
         style={{
-          backgroundImage: `url(${premiumHero})`,
+          backgroundImage: `url(${instagramWorkers})`,
         }}
       />
       
@@ -88,8 +87,8 @@ const Hero = () => {
               {/* Main hero image */}
               <div className="relative rounded-3xl overflow-hidden shadow-[var(--elegant-shadow)]">
                 <img 
-                  src={premiumHero}
-                  alt="Premium digital marketing visualization" 
+                  src={instagramWorkers}
+                  alt="Creative team managing Instagram and social media content" 
                   className="w-full h-auto transition-transform duration-700 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20"></div>

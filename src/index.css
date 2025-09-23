@@ -19,7 +19,7 @@ All colors MUST be HSL.
     --popover-foreground: 220 50% 20%;
 
     /* Primary - Artbox Brand Color #c88d7f */
-    --primary: 12 42% 64%;
+    --primary: 11 37% 64%;
     --primary-foreground: 0 0% 100%;
     
     /* Secondary - Deep Navy */
@@ -40,20 +40,20 @@ All colors MUST be HSL.
     --gold-muted: 45 50% 85%;
     
     /* Gradients */
-    --hero-gradient: linear-gradient(135deg, hsl(12, 42%, 64%), hsl(45, 90%, 70%));
+    --hero-gradient: linear-gradient(135deg, hsl(11, 37%, 64%), hsl(45, 90%, 70%));
     --navy-gradient: linear-gradient(135deg, hsl(220, 50%, 15%), hsl(220, 40%, 25%));
-    --premium-glow: 0 0 50px hsl(12, 42%, 64% / 0.3);
+    --premium-glow: 0 0 50px hsl(11, 37%, 64% / 0.3);
     
     /* Shadows */
     --elegant-shadow: 0 25px 50px -12px hsl(220, 50%, 15% / 0.25);
-    --glow-shadow: 0 0 30px hsl(12, 42%, 64% / 0.4);
+    --glow-shadow: 0 0 30px hsl(11, 37%, 64% / 0.4);
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 40 30% 85%;
     --input: 40 30% 85%;
-    --ring: 12 42% 64%;
+    --ring: 11 37% 64%;
 
     --radius: 0.5rem;
 
@@ -84,7 +84,7 @@ All colors MUST be HSL.
     --popover: 220 50% 10%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 12 42% 64%;
+    --primary: 11 37% 64%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 50% 15%;
@@ -101,7 +101,7 @@ All colors MUST be HSL.
 
     --border: 220 50% 20%;
     --input: 220 50% 20%;
-    --ring: 12 42% 64%;
+    --ring: 11 37% 64%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
