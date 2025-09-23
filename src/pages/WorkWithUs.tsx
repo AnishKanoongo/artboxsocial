@@ -9,20 +9,20 @@ const WorkWithUs = () => {
     {
       icon: <TrendingUp className="w-8 h-8 text-primary" />,
       title: "Proven Growth Results",
-      description: "Average 300% increase in engagement and 250% growth in followers within 6 months",
-      stats: "300% Avg Growth"
+      description: "Average 180% increase in engagement and 150% growth in followers within 6 months",
+      stats: "180% Avg Growth"
     },
     {
       icon: <Users className="w-8 h-8 text-primary" />,
       title: "Dedicated Team",
-      description: "Your own dedicated account manager, creative designer, and content strategist",
-      stats: "3-Person Team"
+      description: "Dedicated account manager and creative team assigned to your brand",
+      stats: "Dedicated Team"
     },
     {
       icon: <Clock className="w-8 h-8 text-primary" />,
       title: "24/7 Support",
-      description: "Round-the-clock monitoring and support to keep your brand active and engaging",
-      stats: "24/7 Available"
+      description: "Business hours support with emergency assistance available when needed",
+      stats: "Business Hours"
     },
     {
       icon: <Shield className="w-8 h-8 text-primary" />,
@@ -33,26 +33,26 @@ const WorkWithUs = () => {
     {
       icon: <Award className="w-8 h-8 text-primary" />,
       title: "Award-Winning Creative",
-      description: "Our content has won multiple industry awards and viral recognition",
-      stats: "15+ Awards"
+      description: "Creative content that consistently performs above industry standards",
+      stats: "Top 10% Performance"
     },
     {
       icon: <Target className="w-8 h-8 text-primary" />,
       title: "Local Expertise",
-      description: "Deep understanding of Jaipur and Rajasthan markets with global best practices",
-      stats: "5+ Years Local"
+      description: "Deep understanding of Jaipur and Rajasthan markets with proven results",
+      stats: "3+ Years Local"
     }
   ];
 
   const whyChooseUs = [
-    "✨ Jaipur's #1 rated social media agency with 200+ successful campaigns",
+    "✨ Leading social media agency in Jaipur with 50+ successful campaigns",
     "🎯 Custom strategies tailored to your industry and target audience", 
-    "📊 Transparent reporting with real-time analytics and monthly reviews",
-    "🚀 Faster turnaround times - content delivered within 48 hours",
-    "💡 Creative content that stands out in crowded social media feeds",
-    "🤝 Personal relationship - we treat your brand like our own",
-    "📈 ROI-focused approach with measurable business results",
-    "🎨 In-house creative team with expertise in all major platforms"
+    "📊 Monthly reporting with detailed analytics and performance insights",
+    "🚀 Professional content delivered within 3-5 business days",
+    "💡 Creative content designed to engage your specific audience",
+    "🤝 Personal relationship - direct communication with your account manager",
+    "📈 Results-driven approach focused on growing your business",
+    "🎨 Creative team with expertise across Instagram, Facebook, and LinkedIn"
   ];
 
   const packages = [
@@ -70,7 +70,7 @@ const WorkWithUs = () => {
     },
     {
       name: "Growth",
-      price: "₹25,000/month", 
+      price: "₹35,000/month", 
       description: "Ideal for businesses ready to scale their presence",
       features: [
         "30 custom posts per month",
@@ -182,21 +182,21 @@ const WorkWithUs = () => {
                   ))}
                 </div>
                 <h3 className="text-2xl font-bold font-playfair mb-2">Client Satisfaction</h3>
-                <p className="text-4xl font-bold text-primary">98.5%</p>
+                <p className="text-4xl font-bold text-primary">92%</p>
                 <p className="text-muted-foreground">Average client satisfaction score</p>
               </div>
               
               <div className="space-y-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">200+</div>
+                  <div className="text-3xl font-bold text-primary">50+</div>
                   <div className="text-muted-foreground">Successful Campaigns</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">5+</div>
+                  <div className="text-3xl font-bold text-primary">3+</div>
                   <div className="text-muted-foreground">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">24hrs</div>
+                  <div className="text-3xl font-bold text-primary">48hrs</div>
                   <div className="text-muted-foreground">Average Response Time</div>
                 </div>
               </div>
@@ -263,7 +263,7 @@ const WorkWithUs = () => {
             Ready to Transform Your <span className="text-gradient">Digital Presence?</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Join 200+ satisfied clients who've seen their brands flourish with Artbox Social
+            Join 50+ satisfied clients who've seen their brands grow with Artbox Social
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
