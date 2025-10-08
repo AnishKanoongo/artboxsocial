@@ -18,15 +18,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto section-padding">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center space-x-3">
+          <a href="/" className="flex items-center">
             <img 
               src="/src/assets/artbox-logo.png" 
               alt="Artbox Social Logo" 
-              className="h-10 w-auto"
+              className="h-12 w-auto"
             />
-            <span className="text-2xl font-bold text-gradient font-playfair">
-              Artbox Social
-            </span>
           </a>
 
           {/* Desktop Navigation */}
