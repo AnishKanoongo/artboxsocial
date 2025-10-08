@@ -8,56 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Futuristic Premium Design System */
-    --background: 220 25% 6%;
-    --foreground: 0 0% 98%;
+    /* Artbox Social Premium Design System */
+    --background: 0 0% 100%;
+    --foreground: 220 50% 20%;
 
-    --card: 220 20% 10%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 50% 20%;
 
-    --popover: 220 20% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 50% 20%;
 
-    /* Primary - Vibrant Cyan */
-    --primary: 190 95% 55%;
-    --primary-foreground: 220 25% 6%;
+    /* Primary - Artbox Brand Color #c88d7f */
+    --primary: 11 37% 64%;
+    --primary-foreground: 0 0% 100%;
     
-    /* Secondary - Deep Purple */
-    --secondary: 260 60% 50%;
+    /* Secondary - Deep Navy */
+    --secondary: 220 50% 20%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Muted - Dark Gray */
-    --muted: 220 15% 18%;
-    --muted-foreground: 220 10% 65%;
+    /* Muted - Light Gray */
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 20% 60%;
 
-    /* Accent - Electric Purple */
-    --accent: 280 85% 65%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Gold */
+    --accent: 45 90% 70%;
+    --accent-foreground: 220 50% 20%;
 
-    /* Premium Futuristic Extensions */
-    --navy: 220 40% 8%;
-    --gold: 45 100% 60%;
-    --gold-muted: 45 80% 70%;
+    /* Premium Design System Extensions */
+    --navy: 220 50% 15%;
+    --gold: 45 90% 70%;
+    --gold-muted: 45 50% 85%;
     
-    /* Futuristic Gradients */
-    --hero-gradient: linear-gradient(135deg, hsl(190, 95%, 55%), hsl(280, 85%, 65%), hsl(260, 60%, 50%));
-    --cyber-gradient: linear-gradient(135deg, hsl(190, 95%, 55%) 0%, hsl(260, 60%, 50%) 100%);
-    --premium-gradient: linear-gradient(90deg, hsl(280, 85%, 65%) 0%, hsl(190, 95%, 55%) 50%, hsl(260, 60%, 50%) 100%);
-    --glow-gradient: radial-gradient(circle at 50% 50%, hsl(190, 95%, 55% / 0.2), transparent 70%);
+    /* Gradients */
+    --hero-gradient: linear-gradient(135deg, hsl(11, 37%, 64%), hsl(45, 90%, 70%));
+    --navy-gradient: linear-gradient(135deg, hsl(220, 50%, 15%), hsl(220, 40%, 25%));
+    --premium-glow: 0 0 50px hsl(11, 37%, 64% / 0.3);
     
-    /* Neon Glows & Shadows */
-    --neon-glow-cyan: 0 0 20px hsl(190, 95%, 55% / 0.6), 0 0 40px hsl(190, 95%, 55% / 0.4), 0 0 60px hsl(190, 95%, 55% / 0.2);
-    --neon-glow-purple: 0 0 20px hsl(280, 85%, 65% / 0.6), 0 0 40px hsl(280, 85%, 65% / 0.4), 0 0 60px hsl(280, 85%, 65% / 0.2);
-    --elegant-shadow: 0 25px 50px -12px hsl(190, 95%, 55% / 0.3);
-    --glow-shadow: 0 0 30px hsl(190, 95%, 55% / 0.5);
-    --card-glow: 0 8px 32px hsl(190, 95%, 55% / 0.15);
+    /* Shadows */
+    --elegant-shadow: 0 25px 50px -12px hsl(220, 50%, 15% / 0.25);
+    --glow-shadow: 0 0 30px hsl(11, 37%, 64% / 0.4);
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 15%;
-    --ring: 190 95% 55%;
+    --border: 40 30% 85%;
+    --input: 40 30% 85%;
+    --ring: 11 37% 64%;
 
     --radius: 0.5rem;
 
@@ -79,33 +75,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 25% 6%;
-    --foreground: 0 0% 98%;
+    --background: 220 50% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 220 20% 10%;
-    --card-foreground: 0 0% 98%;
+    --card: 220 50% 10%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 220 20% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 220 50% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 190 95% 55%;
-    --primary-foreground: 220 25% 6%;
+    --primary: 11 37% 64%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 260 60% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 220 50% 15%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 220 10% 65%;
+    --muted: 220 50% 15%;
+    --muted-foreground: 220 20% 65%;
 
-    --accent: 280 85% 65%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 90% 70%;
+    --accent-foreground: 220 50% 8%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 190 95% 55%;
+    --border: 220 50% 20%;
+    --input: 220 50% 20%;
+    --ring: 11 37% 64%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -142,55 +138,15 @@ All colors MUST be HSL.
   }
 
   .premium-hero-button {
-    @apply bg-gradient-to-r from-primary via-accent to-secondary text-foreground hover:opacity-90 px-12 py-6 rounded-full font-bold text-xl transition-all duration-500 hover:scale-110 relative overflow-hidden;
-    box-shadow: var(--neon-glow-cyan);
-  }
-
-  .premium-hero-button::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, transparent, hsl(var(--foreground) / 0.1), transparent);
-    transform: translateX(-100%);
-    animation: shimmer 3s infinite;
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-12 py-6 rounded-full font-bold text-xl transition-all duration-500 hover:scale-110 shadow-lg hover:shadow-[var(--glow-shadow)] border-2 border-transparent hover:border-accent;
   }
 
   .premium-outline-button {
-    @apply border-2 border-primary text-primary hover:bg-primary/10 px-12 py-6 rounded-full font-bold text-xl transition-all duration-500 hover:scale-110 relative;
-    box-shadow: var(--neon-glow-cyan);
+    @apply border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-12 py-6 rounded-full font-bold text-xl transition-all duration-500 hover:scale-110 hover:shadow-[var(--glow-shadow)];
   }
 
   .service-card {
-    @apply bg-card/50 backdrop-blur-xl border border-primary/20 rounded-3xl p-10 transition-all duration-700 hover:-translate-y-4 hover:scale-105 relative overflow-hidden;
-    box-shadow: var(--card-glow);
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--glow-gradient);
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
-
-  .service-card:hover::before {
-    opacity: 1;
-  }
-
-  .service-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
-    transition: left 0.5s;
-  }
-
-  .service-card:hover::after {
-    left: 100%;
+    @apply bg-card border border-border rounded-3xl p-10 hover:shadow-[var(--elegant-shadow)] transition-all duration-700 hover:-translate-y-4 hover:scale-105;
   }
 
   .fade-in {
@@ -218,16 +174,11 @@ All colors MUST be HSL.
   }
 
   .text-gradient {
-    background: var(--premium-gradient);
-    background-size: 200% auto;
-    @apply bg-clip-text text-transparent;
-    animation: gradient-shift 3s ease infinite;
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
 
   .text-gradient-navy {
-    @apply bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent;
-    background-size: 200% auto;
-    animation: gradient-shift 4s ease infinite;
+    @apply bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent;
   }
 
   .hero-title {
@@ -308,20 +259,5 @@ All colors MUST be HSL.
 
   .float-animation {
     animation: float 6s ease-in-out infinite;
-  }
-
-  @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-  }
-
-  @keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-
-  @keyframes glow-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
   }
 }
