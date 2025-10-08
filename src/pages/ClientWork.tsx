@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, TrendingUp, Users, Heart } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const ClientWork = () => {
   const clientProjects = [
@@ -216,6 +218,7 @@ const ClientWork = () => {
 
   return (
     <div className="min-h-screen">
+      <Navbar />
       {/* Header */}
       <section className="py-20 section-padding bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="max-w-7xl mx-auto text-center">
@@ -304,7 +307,7 @@ const ClientWork = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="/pricing"
+              href="/work-with-us"
               className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               View Our Packages
@@ -318,6 +321,8 @@ const ClientWork = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

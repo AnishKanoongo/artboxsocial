@@ -139,7 +139,7 @@ const Services = () => {
                 <p className="text-xl text-white/90 mb-8 font-inter leading-relaxed">
                   Complete social media strategy, content planning, and community management across all platforms with dedicated account managers.
                 </p>
-                <a href="/pricing">
+                <a href="/work-with-us">
                   <button className="bg-gold text-navy px-8 py-4 rounded-full font-bold text-lg hover:scale-110 hover:shadow-xl transition-all duration-300">
                     Get Started
                   </button>
@@ -198,7 +198,7 @@ const Services = () => {
                 Book a free consultation to discuss your goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="/pricing">
+                <a href="/work-with-us">
                   <button className="bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:scale-110 hover:shadow-xl transition-all duration-300">
                     View Packages
                   </button>

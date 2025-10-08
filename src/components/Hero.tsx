@@ -68,7 +68,7 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-8">
-              <a href="/pricing">
+              <a href="/work-with-us">
                 <Button className="premium-hero-button">
                   🚀 Work With Us
                 </Button>

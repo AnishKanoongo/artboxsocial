@@ -256,31 +256,80 @@ const WorkWithUs = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section with Contact Info */}
       <section className="section-padding py-20 bg-gradient-to-r from-primary/10 to-accent/10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold font-playfair mb-8">
-            Ready to Transform Your <span className="text-gradient">Digital Presence?</span>
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Join 50+ satisfied clients who've seen their brands grow with Artbox Social
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button className="premium-hero-button text-lg px-8 py-4">
-              🚀 Start Your Project Today
-            </Button>
-            <Button variant="outline" className="text-lg px-8 py-4 border-primary text-primary hover:bg-primary hover:text-white">
-              📋 Download Our Portfolio
-            </Button>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl lg:text-5xl font-bold font-playfair mb-6">
+              Ready to Transform Your <span className="text-gradient">Digital Presence?</span>
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Join 50+ satisfied clients who've seen their brands grow with Artbox Social
+            </p>
+          </div>
+
+          {/* Contact Cards */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Email Card */}
+            <Card className="service-card group text-center">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold font-playfair mb-3">Email Us</h3>
+                <a 
+                  href="mailto:artboxsocial@gmail.com" 
+                  className="text-2xl font-semibold text-primary hover:underline"
+                >
+                  artboxsocial@gmail.com
+                </a>
+                <p className="text-muted-foreground mt-3">We'll respond within 24 hours</p>
+              </CardContent>
+            </Card>
+
+            {/* Phone Card */}
+            <Card className="service-card group text-center">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
+                  <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold font-playfair mb-3">Call Us</h3>
+                <a 
+                  href="tel:+919828088826" 
+                  className="text-2xl font-semibold text-primary hover:underline"
+                >
+                  +91 98280 88826
+                </a>
+                <p className="text-muted-foreground mt-3">Mon-Sat, 10 AM - 7 PM IST</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
+            <a href="mailto:artboxsocial@gmail.com">
+              <Button className="premium-hero-button text-lg px-10 py-4">
+                📧 Send Us an Email
+              </Button>
+            </a>
+            <a href="tel:+919828088826">
+              <Button variant="outline" className="text-lg px-10 py-4 border-primary text-primary hover:bg-primary hover:text-white">
+                📞 Call Now
+              </Button>
+            </a>
           </div>
           
-          <div className="mt-12 text-center">
+          <div className="text-center">
             <p className="text-muted-foreground mb-4">Trusted by leading brands in Jaipur</p>
-            <div className="flex justify-center items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-muted-foreground">
               <span>✅ No Setup Fees</span>
               <span>✅ 30-Day Money Back</span>
               <span>✅ Cancel Anytime</span>
+              <span>✅ Free Consultation</span>
             </div>
           </div>
         </div>
