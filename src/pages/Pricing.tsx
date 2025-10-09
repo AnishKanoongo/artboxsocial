@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import SEO from "@/components/SEO";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Pricing = () => {
   const packages = [
@@ -58,8 +61,30 @@ const Pricing = () => {
     }
   ];
 
+  const pricingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Social Media Marketing Services",
+    "description": "Professional social media marketing packages for businesses in Jaipur",
+    "offers": packages.map(pkg => ({
+      "@type": "Offer",
+      "name": pkg.name,
+      "price": pkg.price.replace('₹', '').replace(',', ''),
+      "priceCurrency": "INR",
+      "description": pkg.description,
+      "category": "Social Media Marketing"
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 to-accent/5">
+      <SEO 
+        title="Pricing - Artbox Social | Social Media Marketing Packages Jaipur"
+        description="Transparent pricing for social media marketing, content creation, and digital advertising services in Jaipur. Packages starting from ₹15,000/month."
+        keywords="social media pricing, digital marketing packages jaipur, social media management cost, content creation pricing"
+        canonicalUrl="https://www.artboxsocial.com/pricing"
+        structuredData={pricingSchema}
+      />
       {/* Header */}
       <section className="py-20 section-padding">
         <div className="max-w-7xl mx-auto text-center">

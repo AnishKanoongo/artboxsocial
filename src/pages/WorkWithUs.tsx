@@ -3,8 +3,50 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { CheckCircle, Star, TrendingUp, Users, Clock, Shield, Award, Target } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const WorkWithUs = () => {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Social Media Marketing",
+    "provider": {
+      "@type": "Organization",
+      "name": "Artbox Social"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Jaipur"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Social Media Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Social Media Management"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Content Creation"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Influencer Marketing"
+          }
+        }
+      ]
+    }
+  };
+
   const benefits = [
     {
       icon: <TrendingUp className="w-8 h-8 text-primary" />,
@@ -100,6 +142,13 @@ const WorkWithUs = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Work With Us - Artbox Social | Partner with Jaipur's Leading Digital Agency"
+        description="Partner with Jaipur's most trusted social media agency. Expert team, proven results, dedicated support. Transform your brand into a digital powerhouse."
+        keywords="hire social media agency jaipur, digital marketing partnership, social media team, work with agency jaipur"
+        canonicalUrl="https://www.artboxsocial.com/work-with-us"
+        structuredData={serviceSchema}
+      />
       <Navbar />
       
       {/* Hero Section */}

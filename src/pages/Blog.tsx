@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import blogHeader from "@/assets/blog-header.jpg";
 import analyticsImage from "@/assets/analytics-dashboard.jpg";
 import influencerImage from "@/assets/influencer-marketing.jpg";
@@ -13,6 +14,22 @@ const Blog = () => {
     threshold: 0.1,
     triggerOnce: true
   });
+
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Artbox Social Blog",
+    "description": "Expert insights on social media marketing, digital growth strategies, and content creation",
+    "url": "https://www.artboxsocial.com/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Artbox Social",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.artboxsocial.com/artbox-logo.png"
+      }
+    }
+  };
 
   const blogPosts = [
     {
@@ -119,6 +136,13 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Blog - Artbox Social | Social Media Marketing Insights & Strategies"
+        description="Expert insights on social media marketing, digital growth strategies, content creation, Instagram tips, and viral marketing from Jaipur's leading digital agency."
+        keywords="social media tips, Instagram growth, viral marketing, content strategy, digital marketing blog, social media trends 2025"
+        canonicalUrl="https://www.artboxsocial.com/blog"
+        structuredData={blogSchema}
+      />
       <Navbar />
       
       {/* Hero Section */}
