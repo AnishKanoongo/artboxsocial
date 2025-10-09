@@ -318,6 +318,9 @@ const BlogPost = () => {
               src={post.image}
               alt={post.title}
               className="w-full h-96 object-cover"
+              width="896"
+              height="384"
+              loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             <div className="absolute bottom-8 left-8">

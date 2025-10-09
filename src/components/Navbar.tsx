@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import artboxLogo from "@/assets/artbox-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,9 +21,13 @@ const Navbar = () => {
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img 
-              src="/src/assets/artbox-logo.png" 
+              src={artboxLogo}
               alt="Artbox Social Logo" 
               className="h-12 w-auto"
+              width="120"
+              height="48"
+              loading="eager"
+              fetchPriority="high"
             />
           </a>
 

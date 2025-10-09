@@ -68,13 +68,14 @@ const Testimonials = () => {
   return (
     <section 
       className="py-20 section-padding relative overflow-hidden"
-      style={{
-        backgroundImage: `url(${testimonialsImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
     >
+      <img 
+        src={testimonialsImage}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+        aria-hidden="true"
+      />
       <div className="absolute inset-0 bg-navy/90"></div>
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">

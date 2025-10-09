@@ -124,13 +124,14 @@ const Blog = () => {
       {/* Hero Section */}
       <section 
         className="py-32 section-padding relative overflow-hidden"
-        style={{
-          backgroundImage: `url(${blogHeader})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
       >
+        <img 
+          src={blogHeader}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          aria-hidden="true"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-primary/80 to-accent/70"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className={`text-center ${inView ? 'fade-in visible' : 'fade-in'}`} ref={ref}>
@@ -173,6 +174,9 @@ const Blog = () => {
                         src={post.image}
                         alt={post.title}
                         className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${index === 0 ? 'h-80' : 'h-48'}`}
+                        width={index === 0 ? "896" : "448"}
+                        height={index === 0 ? "320" : "192"}
+                        loading={index < 3 ? "eager" : "lazy"}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                       <div className="absolute top-4 left-4">

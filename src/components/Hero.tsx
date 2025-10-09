@@ -90,6 +90,9 @@ const Hero = () => {
                   src={instagramWorkers}
                   alt="Creative team managing Instagram and social media content" 
                   className="w-full h-auto transition-transform duration-700 hover:scale-105"
+                  width="800"
+                  height="600"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20"></div>
               </div>

@@ -62,6 +62,9 @@ const About = () => {
                 src={aboutTeamImage}
                 alt="Artbox Social creative team"
                 className="w-full h-auto transition-transform duration-700 hover:scale-105"
+                width="800"
+                height="600"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20"></div>
             </div>
