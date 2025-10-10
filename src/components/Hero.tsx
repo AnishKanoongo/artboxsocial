@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 import instagramWorkers from "@/assets/instagram-workers.png";
 
 const Hero = () => {
@@ -68,16 +69,16 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-8">
-              <a href="/work-with-us">
+              <Link to="/work-with-us">
                 <Button className="premium-hero-button">
                   🚀 Work With Us
                 </Button>
-              </a>
-              <a href="/client-work">
+              </Link>
+              <Link to="/client-work">
                 <Button className="premium-outline-button">
                   View Our Work
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
 
