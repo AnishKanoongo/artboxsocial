@@ -1,0 +1,677 @@
+<title>Artbox Contact Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Kalam:wght@400;700&display=swap">
+<style>
+/* Layout: one contact sheet. Film-black ground with frame strips; a drenched rose ground for the services and the enquiry; a white light table for client words. Grease-pencil marks do the emphasis. */
+:root {
+  --sheet: #171213;        /* warm film black */
+  --rebate: #0e0a0b;       /* film edge between frames */
+  --edge: #9c8683;         /* edge-print numbers */
+  --rose: #be958a;         /* brand dusty rose (logo ground) */
+  --marker: #eab3a4;       /* china marker on black */
+  --ink: #1b1415;          /* text on rose and light table */
+  --ink-soft: #3d2b2a;     /* secondary text on rose, tinted from rose */
+  --paper: #fbf9f9;        /* light table */
+  --paper-line: #eadfdd;
+  --white: #ffffff;
+  /* sample-post palette */
+  --p-marigold: #dc9b32;
+  --p-teal: #1f4a48;
+  --p-indigo: #2a3765;
+
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --hand: "Kalam", "Segoe Print", "Bradley Hand", cursive;
+
+  --gutter: max(16px, 4vw);
+  --max: 1320px;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scrollbar-color: var(--rose) var(--rebate); }
+body {
+  background: var(--sheet);
+  color: var(--white);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  font-variation-settings: "wdth" 100;
+  caret-color: var(--rose);
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--rose); color: var(--ink); }
+a { color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px dashed var(--marker); outline-offset: 3px; border-radius: 2px; }
+.wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+.hand { font-family: var(--hand); }
+.edge {
+  font-family: var(--display);
+  font-variation-settings: "wdth" 62;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--edge);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- header ---------- */
+.top { padding-block: 18px; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.logo { display: inline-grid; text-decoration: none; line-height: 0.9; }
+.logo b {
+  font-family: var(--display); font-weight: 900; font-variation-settings: "wdth" 125;
+  font-size: 1.7rem; letter-spacing: -0.01em;
+}
+.logo i { font-family: var(--hand); font-style: normal; color: var(--marker); font-size: 1rem; justify-self: end; margin-top: -2px; transform: rotate(-4deg); }
+.nav { display: flex; gap: clamp(14px, 2.4vw, 32px); flex-wrap: wrap; align-items: center; }
+.nav a { text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+.nav a:hover { text-decoration: underline; text-decoration-color: var(--marker); }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font: inherit; font-weight: 700; font-size: 0.98rem;
+  padding: 13px 20px; border-radius: 999px; border: 0; cursor: pointer; text-decoration: none;
+  transition: transform .2s cubic-bezier(.2,.8,.2,1), background-color .2s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-rose { background: var(--rose); color: var(--ink); }
+.btn-rose:hover { background: var(--marker); }
+.btn-line { background: transparent; color: var(--white); box-shadow: inset 0 0 0 1.5px var(--edge); }
+.btn-line:hover { box-shadow: inset 0 0 0 1.5px var(--white); }
+.btn-ink { background: var(--ink); color: var(--paper); }
+.btn-ink:hover { background: #33272a; }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.demo-tag { color: var(--edge); font-size: .85rem; }
+
+/* ---------- hero ---------- */
+.hero { padding-block: clamp(28px, 6vw, 72px) 0; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); align-items: end; }
+.h1 {
+  margin: 0;
+  font-family: var(--display); font-weight: 900; font-variation-settings: "wdth" 125;
+  font-size: clamp(2.7rem, 8.4vw, 6rem); line-height: 0.92; letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+.h1 span { display: block; position: relative; width: fit-content; }
+.h1 .circled { padding-inline: 0.12em; margin-inline: -0.12em; }
+.mark { position: absolute; pointer-events: none; overflow: visible; fill: none; stroke: var(--marker); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+.h1 .circled .mark { inset: -14% -5% -10% -6%; width: 111%; height: 124%; }
+.h1 .ticked .mark { width: 0.62em; height: 0.62em; right: -0.72em; top: 0.12em; }
+.hero-copy { display: grid; gap: 22px; padding-bottom: 6px; }
+.hero-copy p { margin: 0; font-size: clamp(1.05rem, 1.5vw, 1.2rem); max-width: 34ch; color: #efe6e4; }
+.hero-copy p strong { color: var(--white); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.note {
+  font-family: var(--hand); color: var(--marker); font-size: 1.35rem; line-height: 1.1;
+  display: flex; align-items: flex-end; gap: 6px; transform: rotate(-2deg); transform-origin: left;
+}
+.note svg { width: 46px; height: 54px; flex: none; }
+.note svg path { fill: none; stroke: var(--marker); stroke-width: 2.4; stroke-linecap: round; }
+
+/* ---------- contact sheet ---------- */
+.sheet { margin-top: clamp(28px, 4vw, 48px); padding-block: 10px 0; }
+.strip { background: var(--rebate); padding: 0 10px; border-radius: 3px; }
+.strip + .strip { margin-top: 14px; }
+.sprockets {
+  height: 18px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 9px, #2a2224 9px 21px, transparent 21px 30px) center / 100% 8px no-repeat;
+}
+.strip-head { display: flex; justify-content: space-between; gap: 12px; padding: 2px 4px 6px; }
+.frames {
+  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin;
+}
+.frame {
+  position: relative; display: grid; gap: 5px; padding: 0; margin: 0; border: 0;
+  background: none; color: inherit; font: inherit; text-align: left; cursor: pointer;
+  scroll-snap-align: start; min-width: 0;
+}
+.frame[disabled] { cursor: default; }
+.frame .fno { display: flex; justify-content: space-between; align-items: center; padding-inline: 2px; }
+.frame .fno svg { width: 7px; height: 8px; fill: var(--edge); }
+.post {
+  container-type: inline-size;
+  position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 1px;
+  transition: filter .3s, transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.frame:not([disabled]):hover .post { transform: scale(1.02); }
+.frame[disabled] .post { filter: saturate(.55) brightness(.75); }
+.frame .ring, .frame .cross { position: absolute; inset: 8px -10px -8px -10px; width: calc(100% + 20px); height: calc(100% - 4px); pointer-events: none; overflow: visible; fill: none; stroke: var(--marker); stroke-width: 3.4; stroke-linecap: round; }
+.frame .cross path { vector-effect: non-scaling-stroke; }
+.frame .ring use { stroke-dasharray: 1 1.2; stroke-dashoffset: 1.1; transition: stroke-dashoffset .55s cubic-bezier(.3,.7,.2,1); }
+.frame[aria-pressed="true"] .ring use { stroke-dashoffset: 0; }
+.frame .tag {
+  font-family: var(--hand); font-size: 1rem; line-height: 1; color: var(--edge); padding-inline: 2px;
+  transition: color .2s;
+}
+.frame[aria-pressed="true"] .tag { color: var(--marker); }
+.frame .why { position: absolute; left: 50%; bottom: 18%; transform: translateX(-50%) rotate(-6deg); font-family: var(--hand); color: var(--marker); font-size: 1.15rem; white-space: nowrap; text-shadow: 0 1px 0 var(--rebate), 0 0 6px var(--rebate); }
+.sheet-foot .tap { color: var(--marker); font-size: 1.1rem; }
+.sheet-foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-block: 14px 0; }
+
+/* sample posts (all type scales with the frame) */
+.post .pt { position: absolute; inset: 7cqw; display: flex; flex-direction: column; justify-content: space-between; }
+.post .big { font-family: var(--display); font-weight: 900; font-variation-settings: "wdth" 112; text-transform: uppercase; line-height: .9; letter-spacing: -0.02em; }
+.post .med { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 90; line-height: 1.05; }
+.post .scr { font-family: var(--hand); line-height: 1; }
+.post .lbl { font-family: var(--display); font-variation-settings: "wdth" 70; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 6cqw; }
+.post svg.art { position: absolute; }
+.play { width: 13cqw; height: 13cqw; }
+.bar { height: 1.6cqw; background: rgb(255 255 255 / .25); border-radius: 2px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 35%; background: currentColor; animation: play 6s linear infinite; }
+@keyframes play { from { width: 0; } to { width: 100%; } }
+.segs { display: flex; gap: 1.5cqw; }
+.segs i { flex: 1; height: 1.2cqw; background: rgb(255 255 255 / .35); border-radius: 2px; }
+.segs i:first-child { background: var(--paper); }
+.dots { display: flex; gap: 2cqw; justify-content: center; }
+.dots i { width: 2.6cqw; height: 2.6cqw; border-radius: 50%; background: rgb(27 20 21 / .25); }
+.dots i:first-child { background: var(--ink); }
+
+.p-gym { background: var(--ink); color: var(--p-marigold); }
+.p-ring { background: var(--rose); color: var(--ink); }
+.p-style { background: var(--paper); color: var(--ink); }
+.p-cafe { background: var(--p-teal); color: var(--paper); }
+.p-school { background: var(--p-marigold); color: var(--ink); }
+.p-diwali { background: var(--p-indigo); color: var(--p-marigold); }
+.p-shoot { background: #2b2224; color: var(--paper); }
+.p-chair { background: #efe6e1; color: var(--ink); }
+.p-cal { background: var(--paper); color: var(--ink); }
+.p-pillars { background: var(--ink); color: var(--paper); }
+.p-car { background: var(--p-teal); color: var(--paper); }
+.p-collab { background: var(--rose); color: var(--ink); }
+.p-blur { filter: blur(1.4px); }
+.p-off { filter: hue-rotate(150deg) saturate(1.7); }
+
+/* ---------- rose section: what we do ---------- */
+.rose { background: var(--rose); color: var(--ink); }
+.rose ::selection { background: var(--ink); color: var(--rose); }
+.do { padding-block: clamp(72px, 10vw, 140px); }
+.h2 {
+  margin: 0 0 clamp(36px, 5vw, 64px);
+  font-family: var(--display); font-weight: 900; font-variation-settings: "wdth" 115;
+  font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1; letter-spacing: -0.03em; text-wrap: balance; max-width: 18ch;
+}
+.rows { display: grid; }
+.row {
+  display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, .8fr);
+  gap: clamp(18px, 3vw, 48px); align-items: start;
+  padding-block: clamp(28px, 4vw, 44px); border-top: 1.5px solid var(--ink);
+}
+.row:last-child { border-bottom: 1.5px solid var(--ink); }
+.verb {
+  font-family: var(--display); font-weight: 900; font-variation-settings: "wdth" 125;
+  font-size: clamp(2.3rem, 5.2vw, 4.5rem); line-height: .9; letter-spacing: -0.035em; text-transform: uppercase; margin: 0;
+}
+.row h3 { margin: 0 0 10px; font-size: 1.35rem; font-weight: 800; font-variation-settings: "wdth" 100; letter-spacing: -0.01em; }
+.row p { margin: 0; max-width: 46ch; color: var(--ink-soft); }
+.row ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-weight: 600; }
+.row li { display: flex; gap: 10px; align-items: baseline; }
+.row li svg { width: 14px; height: 10px; flex: none; transform: translateY(-1px); }
+.row li svg path { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
+.margin-note { font-family: var(--hand); font-size: 1.25rem; line-height: 1.15; color: var(--ink); transform: rotate(-2.5deg); margin-top: 16px; display: block; }
+.also { margin-top: clamp(32px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: baseline; }
+.also b { font-family: var(--hand); font-weight: 700; font-size: 1.3rem; margin-right: 4px; }
+.also span { font-weight: 600; }
+.also span + span::before { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--ink); margin-right: 14px; transform: translateY(-3px); }
+
+/* ---------- clients ---------- */
+.clients { padding-block: clamp(72px, 10vw, 140px); }
+.clients .h2 { color: var(--white); }
+.names { display: flex; flex-wrap: wrap; gap: 6px 0; margin: 0; padding: 0; list-style: none; }
+.names li { display: flex; align-items: baseline; }
+.names a {
+  text-decoration: none;
+  font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 100;
+  font-size: clamp(1.45rem, 3.4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.02em;
+  position: relative;
+}
+.names a:hover { color: var(--marker); }
+.names li:not(:last-child)::after { content: "/"; color: var(--edge); font-weight: 400; font-size: clamp(1.45rem, 3.4vw, 2.6rem); margin-inline: 0.4em; }
+.clients-foot { margin-top: 28px; display: flex; gap: 18px; flex-wrap: wrap; justify-content: space-between; align-items: baseline; }
+.clients-foot .hand { color: var(--marker); font-size: 1.3rem; }
+
+/* ---------- light table: words ---------- */
+.table { background: var(--paper); color: var(--ink); padding-block: clamp(72px, 10vw, 140px); }
+.table ::selection { background: var(--rose); color: var(--ink); }
+.table .h2 { max-width: 20ch; }
+.prints { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 28px); align-items: start; }
+.print {
+  margin: 0; background: var(--white); padding: clamp(20px, 2.6vw, 32px);
+  box-shadow: 0 1px 2px rgb(27 20 21 / .06), 0 10px 28px -12px rgb(27 20 21 / .22);
+  display: grid; gap: 18px;
+}
+.print blockquote { margin: 0; font-size: 1.08rem; line-height: 1.5; }
+.print figcaption { display: grid; gap: 2px; }
+.print figcaption b { font-weight: 800; }
+.print figcaption span { color: #6e5754; font-size: .92rem; }
+.print.feature { grid-column: span 7; transform: rotate(-0.6deg); }
+.print.feature blockquote { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 96; font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1.28; letter-spacing: -0.015em; text-wrap: pretty; }
+.print.s1 { grid-column: span 5; transform: rotate(0.8deg); margin-top: 28px; }
+.print.s2 { grid-column: span 4; transform: rotate(0.5deg); }
+.print.s3 { grid-column: span 4; transform: rotate(-0.7deg); margin-top: 18px; }
+.print.s4 { grid-column: span 4; transform: rotate(0.4deg); }
+.u { position: relative; white-space: nowrap; }
+.u svg { position: absolute; left: -2%; bottom: -0.18em; width: 104%; height: 0.4em; overflow: visible; }
+.u svg path { fill: none; stroke: var(--rose); stroke-width: 3; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+
+/* ---------- enquiry ---------- */
+.enquire { padding-block: clamp(72px, 10vw, 140px); }
+.enq-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.enq-grid .h2 { margin-bottom: 20px; }
+.lead { margin: 0 0 32px; max-width: 40ch; color: var(--ink-soft); font-size: 1.1rem; }
+.reach { display: grid; gap: 14px; margin: 0; }
+.reach div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) auto; gap: 12px; align-items: center; padding-block: 12px; border-top: 1.5px solid rgb(27 20 21 / .35); }
+.reach dt { font-family: var(--hand); font-size: 1.15rem; }
+.reach dd { margin: 0; font-weight: 700; overflow-wrap: anywhere; user-select: all; }
+.reach a { font-weight: 700; }
+.copy { font: inherit; font-size: .85rem; font-weight: 700; background: none; border: 1.5px solid var(--ink); color: var(--ink); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.copy:hover { background: var(--ink); color: var(--rose); }
+
+form { background: var(--paper); color: var(--ink); padding: clamp(22px, 3vw, 40px); display: grid; gap: 20px; box-shadow: 0 20px 50px -24px rgb(27 20 21 / .45); }
+.field { display: grid; gap: 7px; min-width: 0; }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+label, .legend { font-weight: 700; font-size: .95rem; }
+.legend { margin: 0; }
+input, textarea {
+  font: inherit; color: var(--ink); background: var(--white); width: 100%;
+  border: 1.5px solid #cdbcb9; border-radius: 6px; padding: 12px 14px; min-width: 0;
+}
+input::placeholder, textarea::placeholder { color: #7c6663; }
+input:hover, textarea:hover { border-color: #a9908c; }
+input:focus-visible, textarea:focus-visible { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgb(190 149 138 / .55); }
+input[aria-invalid="true"] { border-color: #a3332a; }
+.err { color: #a3332a; font-size: .9rem; font-weight: 600; min-height: 0; }
+textarea { min-height: 110px; resize: vertical; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font: inherit; font-size: .92rem; font-weight: 600; cursor: pointer;
+  padding: 8px 14px; border-radius: 999px; border: 1.5px solid #cdbcb9; background: var(--white); color: var(--ink);
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.chip svg { width: 0; height: 12px; transition: width .2s; }
+.chip svg path { fill: none; stroke: var(--ink); stroke-width: 2.2; stroke-linecap: round; }
+.chip[aria-pressed="true"] { background: var(--rose); border-color: var(--rose); }
+.chip[aria-pressed="true"] svg { width: 12px; }
+.chip:hover { border-color: var(--ink); }
+.form-foot { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; }
+.sent { margin: 0; padding: 14px 16px; background: #f2e8e5; border-radius: 6px; font-weight: 600; }
+
+/* ---------- footer ---------- */
+.foot { padding-block: 26px 34px; }
+.foot .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; }
+
+/* ---------- motion: the two default circles draw once on load ---------- */
+.h1 .circled .mark use, .h1 .ticked .mark use { stroke-dasharray: 1; stroke-dashoffset: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .h1 .circled .mark use { animation: draw .8s .35s cubic-bezier(.3,.7,.2,1) both; }
+  .h1 .ticked .mark use { animation: draw .45s 1.05s cubic-bezier(.3,.7,.2,1) both; }
+  .frame.intro .ring use { transition-delay: var(--d, 1.3s); }
+}
+@keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+  .bar i { width: 40%; }
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 960px) {
+  .hero-grid, .enq-grid { grid-template-columns: minmax(0, 1fr); }
+  .row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .row .verb { grid-column: 1 / -1; }
+  .print.feature, .print.s1 { grid-column: span 12; margin-top: 0; }
+  .print.s2, .print.s3, .print.s4 { grid-column: span 6; margin-top: 0; }
+  .print.s4 { grid-column: span 12; }
+}
+@media (max-width: 760px) {
+  .frames { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 40%; }
+  .nav .hide-s, .nav .hide-xs { display: none; }
+  .top .btn { padding: 10px 16px; font-size: .9rem; }
+  .top .wrap { flex-wrap: nowrap; }
+}
+@media (max-width: 600px) {
+  .row { grid-template-columns: minmax(0, 1fr); }
+  .print.s2, .print.s3 { grid-column: span 12; }
+  .print { transform: none !important; }
+  .two { grid-template-columns: minmax(0, 1fr); }
+  .reach div { grid-template-columns: minmax(0, 1fr) auto; }
+  .reach dt { grid-column: 1 / -1; }
+  .h1 .ticked .mark { right: -0.66em; }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="circle-path" d="M112 14 C 164 12, 194 54, 190 104 C 186 156, 142 190, 96 187 C 46 184, 10 148, 13 98 C 16 48, 56 12, 110 18 C 132 20, 150 30, 162 44" pathLength="1" vector-effect="non-scaling-stroke"/>
+    <path id="ring-path" d="M112 14 C 164 12, 194 54, 190 104 C 186 156, 142 190, 96 187 C 46 184, 10 148, 13 98 C 16 48, 56 12, 110 18 C 132 20, 150 30, 162 44" pathLength="1"/>
+    <path id="tick-path" d="M8 58 C 18 66, 28 78, 36 92 C 52 58, 72 30, 94 8" pathLength="1" vector-effect="non-scaling-stroke"/>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Artbox Social, home"><b>ARTBOX</b><i>Everything Artsy</i></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#sheet" class="hide-s">Work</a>
+      <a href="#do" class="hide-xs">What we do</a>
+      <a href="#clients" class="hide-s">Clients</a>
+      <a href="#words" class="hide-s">Words</a>
+      <a class="btn btn-rose" href="#enquire">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-grid">
+        <h1 class="h1" id="hero-title">
+          <span>Shot.</span>
+          <span class="circled">Circled.<svg class="mark" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true"><use href="#circle-path"/></svg></span>
+          <span class="ticked">Posted.<svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#tick-path"/></svg></span>
+        </h1>
+        <div class="hero-copy">
+          <p><strong>Artbox Social</strong> shoots the reels and posts, picks the ones that will work for your brand, then runs your feed every week. For Jaipur businesses and brands across India.</p>
+          <div class="actions">
+            <a class="btn btn-rose" href="#enquire" id="hero-cta">Start a project<span id="hero-count"></span></a>
+            <a class="btn btn-line" href="https://wa.me/919166150301" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8L4 20z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9.5c.3 2.4 2.6 4.6 5 5l1-1.4-1.8-.9-.8.8c-.9-.4-1.7-1.2-2.1-2.1l.8-.8-.9-1.8L9 9.5z" fill="currentColor"/></svg>
+              WhatsApp us
+            </a>
+          </div>
+          <div class="note" aria-hidden="true">
+            <svg viewBox="0 0 46 54"><path d="M8 4 C 26 12, 36 28, 32 48"/><path d="M22 40 L 32 50 L 40 38"/></svg>
+            circle what you'd post
+          </div>
+        </div>
+      </div>
+
+      <div class="sheet" id="sheet" aria-label="Contact sheet of sample frames. Circle the kinds of content you want.">
+        <div class="strip">
+          <div class="sprockets"></div>
+          <div class="strip-head"><span class="edge">Artbox 400 · Roll 01</span><span class="edge">Sample frames, not client work</span></div>
+          <div class="frames" id="frames-1"></div>
+          <div class="sprockets"></div>
+        </div>
+        <div class="strip">
+          <div class="sprockets"></div>
+          <div class="strip-head"><span class="edge">Artbox 400 · Roll 02</span><span class="edge" id="circled-count">2 circled</span></div>
+          <div class="frames" id="frames-2"></div>
+          <div class="sprockets"></div>
+        </div>
+        <div class="sheet-foot">
+          <span class="hand tap">tap a frame to circle it, your picks go into the enquiry below</span>
+          <span class="edge">Jaipur · Rajasthan</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rose do" id="do" aria-labelledby="do-title">
+    <div class="wrap">
+      <h2 class="h2" id="do-title">Three things we do every week, so your feed never goes quiet.</h2>
+      <div class="rows">
+        <article class="row">
+          <p class="verb">Shot</p>
+          <div>
+            <h3>Content and reels</h3>
+            <p>We plan the shoot, bring the camera and the ideas, and come back with reels, photos, carousels and the words that go with them. Made for a phone screen first.</p>
+          </div>
+          <div>
+            <ul>
+              <li><svg viewBox="0 0 14 10"><path d="M1 5h10M8 1l4 4-4 4"/></svg>Reels and short video</li>
+              <li><svg viewBox="0 0 14 10"><path d="M1 5h10M8 1l4 4-4 4"/></svg>Product and lifestyle shoots</li>
+              <li><svg viewBox="0 0 14 10"><path d="M1 5h10M8 1l4 4-4 4"/></svg>Carousels, stories, captions</li>
+            </ul>
+          </div>
+        </article>
+        <article class="row">
+          <p class="verb">Circled</p>
+          <div>
+            <h3>Social media strategy</h3>
+            <p>Before anything goes up, we decide what your brand stands for online: who it talks to, what it posts about and what a good month looks like.</p>
+          </div>
+          <div>
+            <ul>
+              <li><svg viewBox="0 0 14 10"><path d="M1 5h10M8 1l4 4-4 4"/></svg>Content pillars and tone</li>
+              <li><svg viewBox="0 0 14 10"><path d="M1 5h10M8 1l4 4-4 4"/></svg>Monthly content calendar</li>
+              <li><svg viewBox="0 0 14 10"><path d="M1 5h10M8 1l4 4-4 4"/></svg>Festive and launch planning</li>
+            </ul>
+            <span class="margin-note">the bit most agencies skip</span>
+          </div>
+        </article>
+        <article class="row">
+          <p class="verb">Posted</p>
+          <div>
+            <h3>Social media management</h3>
+            <p>We post on time, reply to comments and messages, and send you a plain report on what worked, so you can get back to running your business.</p>
+          </div>
+          <div>
+            <ul>
+              <li><svg viewBox="0 0 14 10"><path d="M1 5h10M8 1l4 4-4 4"/></svg>Scheduling and posting</li>
+              <li><svg viewBox="0 0 14 10"><path d="M1 5h10M8 1l4 4-4 4"/></svg>Comments and DMs</li>
+              <li><svg viewBox="0 0 14 10"><path d="M1 5h10M8 1l4 4-4 4"/></svg>Monthly report</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <p class="also"><b>also on the sheet:</b><span>Ads</span><span>Influencer collabs</span><span>Logo and brand design</span><span>Photography and video</span><span>Websites</span><span>SEO</span></p>
+    </div>
+  </section>
+
+  <section class="clients" id="clients" aria-labelledby="clients-title">
+    <div class="wrap">
+      <h2 class="h2" id="clients-title">Brands on our sheet</h2>
+      <ul class="names">
+        <li><a href="https://www.instagram.com/af_shyamnagarjaipur/" target="_blank" rel="noopener">Anytime Fitness</a></li>
+        <li><a href="https://www.instagram.com/jewellerybymitalijain/" target="_blank" rel="noopener">Jewellery by Mitali Jain</a></li>
+        <li><a href="https://www.instagram.com/dilegnoindia/" target="_blank" rel="noopener">Dilegno India</a></li>
+        <li><a href="https://www.instagram.com/udaywaldorf/" target="_blank" rel="noopener">Uday Waldorf School</a></li>
+        <li><a href="https://www.instagram.com/yellowbrickroadschool/" target="_blank" rel="noopener">Yellow Bricks Jaipur</a></li>
+        <li><a href="https://www.instagram.com/casaninosofficial/" target="_blank" rel="noopener">Casa Ninos</a></li>
+        <li><a href="https://www.instagram.com/suadrestudio/" target="_blank" rel="noopener">Suadre Studios</a></li>
+        <li><a href="https://shreeyasindia.com/" target="_blank" rel="noopener">Shreeya's India</a></li>
+        <li><a href="https://www.instagram.com/kala__studio/" target="_blank" rel="noopener">Kalaai Studio</a></li>
+        <li><a href="https://www.instagram.com/gayatri_arts_creations/" target="_blank" rel="noopener">Gayatri Arts Creations</a></li>
+        <li><a href="https://www.instagram.com/roshan_kia_jaipur/" target="_blank" rel="noopener">Roshan Kia</a></li>
+        <li><a href="https://roshannissan.com/" target="_blank" rel="noopener">Roshan Nissan</a></li>
+      </ul>
+      <div class="clients-foot">
+        <span class="hand">gyms, schools, jewellers, showrooms, studios</span>
+        <span class="edge">Each name opens their feed</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="table" id="words" aria-labelledby="words-title">
+    <div class="wrap">
+      <h2 class="h2" id="words-title">What our clients say</h2>
+      <div class="prints">
+        <figure class="print feature">
+          <blockquote>“The team at Artbox understands <span class="u">luxury branding<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6 C 30 2, 60 9, 99 4"/></svg></span> perfectly. Their influencer marketing strategy has been phenomenal for our jewelry business growth.”</blockquote>
+          <figcaption><b>Mitali Jain</b><span>Jewellery by Mitali Jain</span></figcaption>
+        </figure>
+        <figure class="print s1">
+          <blockquote>“Artbox Social completely transformed our digital presence. Their creative approach and data-driven strategies helped us achieve 3x engagement growth in just 6 months.”</blockquote>
+          <figcaption><b>Rajesh Sharma</b><span>Anytime Fitness Jaipur</span></figcaption>
+        </figure>
+        <figure class="print s2">
+          <blockquote>“Artbox transformed our furniture brand's online presence with stunning visuals and strategic positioning. Our market presence has never been stronger.”</blockquote>
+          <figcaption><b>Rohan Dilegno</b><span>Dilegno India</span></figcaption>
+        </figure>
+        <figure class="print s3">
+          <blockquote>“The parent community engagement has improved tremendously since we started working with Artbox. Their understanding of education sector is remarkable.”</blockquote>
+          <figcaption><b>Priya Mehta</b><span>Yellow Bricks Jaipur</span></figcaption>
+        </figure>
+        <figure class="print s4">
+          <blockquote>“Professional, creative, and results-driven. Artbox helped us boost admissions significantly through their comprehensive digital marketing approach.”</blockquote>
+          <figcaption><b>Dr. Priya Gupta</b><span>Uday Waldorf School</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="rose enquire" id="enquire" aria-labelledby="enq-title">
+    <div class="wrap enq-grid">
+      <div>
+        <h2 class="h2" id="enq-title">Tell us about your brand</h2>
+        <p class="lead">Share what you sell and what you want your feed to do. We reply within a day with ideas and a plan.</p>
+        <dl class="reach">
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/919166150301" target="_blank" rel="noopener">+91 91661 50301</a></dd><button class="copy" type="button" data-copy="+91 9166150301">Copy</button></div>
+          <div><dt>Email</dt><dd>Artbox.snigdha@gmail.com</dd><button class="copy" type="button" data-copy="Artbox.snigdha@gmail.com">Copy</button></div>
+          <div><dt>Studio</dt><dd>Jaipur, Rajasthan, India</dd><span></span></div>
+        </dl>
+      </div>
+
+      <form id="enquiry" novalidate>
+        <div class="two">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" autocomplete="name" placeholder="Snigdha Sharma">
+            <span class="err" id="e-name" hidden>Add your name so we know who to reply to.</span>
+          </div>
+          <div class="field">
+            <label for="f-biz">Business or brand</label>
+            <input id="f-biz" name="business" autocomplete="organization" placeholder="Rose Café, C-Scheme">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-phone">WhatsApp number</label>
+          <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98xxx xxxxx">
+          <span class="err" id="e-phone" hidden>Add a number with at least 10 digits, for example +91 98290 12345.</span>
+        </div>
+        <div class="field" role="group" aria-labelledby="needs-label">
+          <p class="legend" id="needs-label">What do you need? <span class="hand" style="font-weight:400">(your circled frames)</span></p>
+          <div class="chips" id="chips"></div>
+        </div>
+        <div class="field">
+          <label for="f-msg">Anything else</label>
+          <textarea id="f-msg" name="message" placeholder="We open a second outlet in March and want reels for the launch."></textarea>
+        </div>
+        <div class="form-foot">
+          <button class="btn btn-ink" type="submit">Send enquiry</button>
+          <span class="hand">we reply within a day</span>
+        </div>
+        <p class="sent" id="sent" role="status" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="edge">Artbox Social · Jaipur, Rajasthan · Everything Artsy</span>
+    <span class="demo-tag">Design demo. Frames on the sheet are illustrations, not client work.</span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const ring = '<svg class="ring" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true"><use href="#ring-path"/></svg>';
+  const cross = '<svg class="cross" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true"><path d="M30 34 C 80 80, 120 124, 172 172 M 168 30 C 120 82, 80 120, 32 176"/></svg>';
+  const play = '<svg class="play" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg>';
+  const tri = '<svg viewBox="0 0 7 8" aria-hidden="true"><path d="M0 0l7 4-7 4z"/></svg>';
+
+  // Each frame: a sample post, the kind of content it stands for, and its frame number.
+  const posts = {
+    gym: `<div class="post p-gym"><div class="pt"><div style="display:flex;justify-content:space-between;align-items:center"><span class="lbl">Reel</span>${play}</div><div><div class="big" style="font-size:24cqw">Leg day</div><div class="scr" style="font-size:12cqw;color:var(--paper)">is pay day</div></div><div><div class="bar"><i></i></div><div class="lbl" style="margin-top:2cqw;color:var(--paper)">0:15</div></div></div></div>`,
+    ring: `<div class="post p-ring"><svg class="art" viewBox="0 0 100 100" style="left:18%;top:12%;width:64%" aria-hidden="true"><circle cx="50" cy="60" r="26" fill="none" stroke="#1b1415" stroke-width="5"/><path d="M38 30 L50 16 L62 30 L50 40 Z" fill="#fbf9f9" stroke="#1b1415" stroke-width="2.5" stroke-linejoin="round"/></svg><div class="pt" style="justify-content:flex-end"><div class="med" style="font-size:11cqw">Kundan, re&shy;imagined</div><div class="lbl" style="margin-top:2cqw">Product shoot</div></div></div>`,
+    style: `<div class="post p-style"><svg class="art" viewBox="0 0 100 60" style="left:0;top:0;width:100%" aria-hidden="true"><rect width="100" height="60" fill="#be958a"/>${Array.from({length:40},(_,i)=>`<circle cx="${6+(i%10)*9.8}" cy="${7+Math.floor(i/10)*14+(i%2)*4}" r="1.8" fill="#fbf9f9"/>`).join('')}</svg><div class="pt" style="justify-content:flex-end"><div class="med" style="font-size:10cqw">5 ways to style a bandhani dupatta</div><div class="dots" style="margin-top:4cqw"><i></i><i></i><i></i><i></i><i></i></div></div></div>`,
+    cafe: `<div class="post p-cafe"><div class="pt"><div class="segs"><i></i><i></i><i></i></div><div><div class="big" style="font-size:13cqw">New on the menu</div><div class="scr" style="font-size:15cqw;color:var(--rose);margin-top:3cqw">Rose falooda</div></div><svg viewBox="0 0 40 40" style="width:24cqw;align-self:flex-end" aria-hidden="true"><path d="M10 6h20l-3 30H13z" fill="none" stroke="#fbf9f9" stroke-width="2" stroke-linejoin="round"/><path d="M12 18h16" stroke="#be958a" stroke-width="6"/><path d="M24 2l-3 14" stroke="#fbf9f9" stroke-width="2" stroke-linecap="round"/></svg></div></div>`,
+    school: `<div class="post p-school"><div class="pt"><div style="display:flex;justify-content:space-between;align-items:center"><span class="lbl">Reel</span>${play}</div><div><div class="big" style="font-size:12cqw">Admissions open</div><div class="med" style="font-size:12cqw;margin-top:3cqw">2026–27</div></div><div class="scr" style="font-size:10cqw">come see the classrooms</div></div></div>`,
+    diwali: `<div class="post p-diwali"><svg class="art" viewBox="0 0 100 100" style="left:22%;top:14%;width:56%" aria-hidden="true"><path d="M50 18 C 58 30, 56 40, 50 44 C 44 40, 42 30, 50 18Z" fill="#dc9b32"/><path d="M18 56 C 30 80, 70 80, 82 56 Z" fill="#be958a"/><path d="M44 56 h12" stroke="#2a3765" stroke-width="3"/></svg><div class="pt" style="justify-content:flex-end"><div class="big" style="font-size:16cqw">Diwali drop</div><div class="lbl" style="margin-top:2cqw;color:var(--paper)">Festive campaign</div></div></div>`,
+    shoot: `<div class="post p-shoot"><div class="pt"><svg viewBox="0 0 40 30" style="width:28cqw" aria-hidden="true"><rect x="2" y="7" width="36" height="21" rx="3" fill="none" stroke="#fbf9f9" stroke-width="2"/><circle cx="20" cy="17" r="6.5" fill="none" stroke="#be958a" stroke-width="2.5"/><path d="M13 7l3-4h8l3 4" fill="none" stroke="#fbf9f9" stroke-width="2"/></svg><div><div class="big" style="font-size:18cqw">Shoot day</div><div class="scr" style="font-size:11cqw;color:var(--rose);margin-top:2cqw">Johari Bazaar, 7:40 am</div></div><span class="lbl">Behind the scenes</span></div></div>`,
+    chair: `<div class="post p-chair"><svg class="art" viewBox="0 0 100 100" style="left:24%;top:10%;width:52%" aria-hidden="true"><path d="M32 12 h36 v40 h-36z M28 52 h44 v8 h-44z M32 60 v32 M68 60 v32 M36 52 v-36" fill="none" stroke="#1b1415" stroke-width="4" stroke-linejoin="round"/><path d="M40 22h20M40 32h20M40 42h20" stroke="#be958a" stroke-width="3"/></svg><div class="pt" style="justify-content:flex-end"><div class="med" style="font-size:11cqw">Sheesham, by hand</div><div class="lbl" style="margin-top:2cqw">Product shoot</div></div></div>`,
+    cal: `<div class="post p-cal"><div class="pt"><span class="lbl">October</span><svg viewBox="0 0 70 40" style="width:100%" aria-hidden="true">${Array.from({length:28},(_,i)=>`<rect x="${(i%7)*10}" y="${Math.floor(i/7)*10}" width="8" height="8" rx="1.5" fill="${[1,3,5,8,10,12,15,17,19,22,24,26].includes(i)?'#be958a':'#eadfdd'}"/>`).join('')}</svg><div><div class="med" style="font-size:12cqw">12 posts, planned</div><div class="scr" style="font-size:10cqw;margin-top:2cqw">Mon · Wed · Fri</div></div></div></div>`,
+    pillars: `<div class="post p-pillars"><div class="pt"><span class="lbl" style="color:var(--rose)">Strategy</span><div class="scr" style="font-size:13cqw;line-height:1.25">Product<br>People<br>Process</div><div class="med" style="font-size:9cqw">Your three content pillars</div></div></div>`,
+    car: `<div class="post p-car"><svg class="art" viewBox="0 0 100 50" style="left:8%;top:22%;width:84%" aria-hidden="true"><path d="M6 36 C 8 26, 20 24, 30 22 L 42 12 H 66 L 80 22 C 90 24, 95 28, 95 36 Z" fill="#fbf9f9"/><circle cx="26" cy="38" r="7" fill="#1f4a48" stroke="#fbf9f9" stroke-width="3"/><circle cx="76" cy="38" r="7" fill="#1f4a48" stroke="#fbf9f9" stroke-width="3"/><path d="M46 16 H64 L72 22 H40Z" fill="#be958a"/></svg><div class="pt" style="justify-content:flex-end"><div class="med" style="font-size:11cqw">Test drive this weekend</div><div style="margin-top:3cqw"><span class="lbl" style="background:var(--paper);color:var(--p-teal);padding:1.5cqw 4cqw;border-radius:99px">Book now</span></div></div></div>`,
+    collab: `<div class="post p-collab"><div class="pt"><div style="display:flex;justify-content:space-between;align-items:center"><span class="lbl">Collab reel</span>${play}</div><div><div class="scr" style="font-size:12cqw">@creator</div><div class="big" style="font-size:20cqw;margin-block:1cqw">×</div><div class="scr" style="font-size:12cqw">your brand</div></div><span class="lbl">Influencer</span></div></div>`
+  };
+
+  const roll1 = [
+    { no: '12', post: 'gym', need: 'Reels', on: true, why: 'this one' },
+    { no: '12A', post: 'ring', need: 'Product shoots', on: true },
+    { no: '13', post: 'style', need: 'Carousels' },
+    { no: '13A', post: 'gym', reject: 'soft focus', blur: true },
+    { no: '14', post: 'cafe', need: 'Stories' },
+    { no: '14A', post: 'school', need: 'Reels' },
+    { no: '15', post: 'diwali', need: 'Festive campaigns' }
+  ];
+  const roll2 = [
+    { no: '22', post: 'shoot', need: 'Shoot days' },
+    { no: '22A', post: 'chair', need: 'Product shoots' },
+    { no: '23', post: 'cal', need: 'Content calendar' },
+    { no: '23A', post: 'pillars', need: 'Strategy' },
+    { no: '24', post: 'cafe', reject: 'off brand', off: true },
+    { no: '24A', post: 'car', need: 'Ads' },
+    { no: '25', post: 'collab', need: 'Influencer collabs' }
+  ];
+
+  const NEEDS = ['Reels', 'Product shoots', 'Carousels', 'Stories', 'Shoot days', 'Festive campaigns', 'Content calendar', 'Strategy', 'Social media management', 'Ads', 'Influencer collabs'];
+  const picked = new Set(['Reels', 'Product shoots']);
+  try { const saved = JSON.parse(localStorage.getItem('artbox-picks') || 'null'); if (Array.isArray(saved)) { picked.clear(); saved.forEach(n => NEEDS.includes(n) && picked.add(n)); } } catch (e) {}
+
+  function frameHTML(f, i) {
+    let post = posts[f.post];
+    if (f.blur) post = post.replace('class="post ', 'class="post p-blur ');
+    if (f.off) post = post.replace('class="post ', 'class="post p-off ');
+    const head = `<span class="fno"><span class="edge">${f.no}</span>${tri}</span>`;
+    if (f.reject) {
+      return `<button class="frame" type="button" disabled aria-label="Frame ${f.no}, rejected take: ${f.reject}">${head}${post}${cross}<span class="tag">${f.reject}</span></button>`;
+    }
+    const on = picked.has(f.need);
+    return `<button class="frame intro" type="button" data-need="${f.need}" aria-pressed="${on}" style="--d:${1.3 + i * 0.25}s" aria-label="Frame ${f.no}: ${f.need}">${head}${post}${ring}<span class="tag">${f.need}</span>${f.why ? `<span class="why" aria-hidden="true">${f.why}</span>` : ''}</button>`;
+  }
+  document.getElementById('frames-1').innerHTML = roll1.map(frameHTML).join('');
+  document.getElementById('frames-2').innerHTML = roll2.map(frameHTML).join('');
+
+  const chipTick = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1.5 6.5l3 3 6-7"/></svg>';
+  document.getElementById('chips').innerHTML = NEEDS.map(n => `<button class="chip" type="button" data-need="${n}" aria-pressed="false">${chipTick}${n}</button>`).join('');
+
+  // Play the circles in on first load, then let them respond instantly.
+  const frames = [...document.querySelectorAll('.frame[data-need]')];
+  frames.forEach(f => f.setAttribute('aria-pressed', 'false'));
+  requestAnimationFrame(() => requestAnimationFrame(() => { sync(); setTimeout(() => frames.forEach(f => f.classList.remove('intro')), 2600); }));
+
+  function sync() {
+    document.querySelectorAll('[data-need]').forEach(el => el.setAttribute('aria-pressed', String(picked.has(el.dataset.need))));
+    const n = picked.size;
+    document.getElementById('circled-count').textContent = n === 1 ? '1 circled' : `${n} circled`;
+    document.getElementById('hero-count').textContent = n ? ` · ${n} circled` : '';
+    try { localStorage.setItem('artbox-picks', JSON.stringify([...picked])); } catch (e) {}
+  }
+  document.addEventListener('click', e => {
+    const el = e.target.closest('[data-need]');
+    if (!el || el.disabled) return;
+    const need = el.dataset.need;
+    picked.has(need) ? picked.delete(need) : picked.add(need);
+    sync();
+  });
+
+  document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', () => {
+    const text = b.dataset.copy;
+    const done = () => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1600); };
+    const fallback = () => { const dd = b.previousElementSibling; const r = document.createRange(); r.selectNodeContents(dd); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; setTimeout(() => b.textContent = 'Copy', 1600); };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (err) { fallback(); }
+  }));
+
+  const form = document.getElementById('enquiry');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = form.elements.name, phone = form.elements.phone;
+    const nameOk = name.value.trim().length > 0;
+    const phoneOk = phone.value.replace(/\D/g, '').length >= 10;
+    name.setAttribute('aria-invalid', String(!nameOk)); document.getElementById('e-name').hidden = nameOk;
+    phone.setAttribute('aria-invalid', String(!phoneOk)); document.getElementById('e-phone').hidden = phoneOk;
+    if (!nameOk) { name.focus(); return; }
+    if (!phoneOk) { phone.focus(); return; }
+    const sent = document.getElementById('sent');
+    const list = [...picked];
+    sent.textContent = `Demo only, nothing was sent. On the live site this enquiry${list.length ? ` for ${list.join(', ').toLowerCase()}` : ''} goes straight to the Artbox team.`;
+    sent.hidden = false;
+  });
+})();
+</script>
